@@ -136,3 +136,15 @@
         , <&gpio1 1 GPIO_ACTIVE_HIGH> // LH Thumb
         ;
 };
+
+/ {
+    chosen {
+        zephyr,console = &cdc_acm_uart0;
+    };
+};
+
+&usbd {
+    cdc_acm_uart0: cdc_acm_uart0 {
+        compatible = "zephyr,cdc-acm-uart";
+    };
+};
